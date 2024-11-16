@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çay İçelim Mi?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        #message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #buttons {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">Hazır vizeler bitmişken çay?</div>
+    <div id="buttons">
+        <button id="yes">Evet</button>
+        <button id="no">Hayır</button>
+    </div>
+    <script>
+        document.getElementById("yes").addEventListener("click", function() {
+            window.location.href = "yes.html";
+        });
+
+        document.getElementById("no").addEventListener("click", function() {
+            const button = document.getElementById("no");
+            const x = Math.floor(Math.random() * (window.innerWidth - button.clientWidth));
+            const y = Math.floor(Math.random() * (window.innerHeight - button.clientHeight));
+            button.style.position = "absolute";
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
